@@ -1,8 +1,8 @@
-from Battery.Battery import Battery
+from battery.Battery import Battery
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from car import Car
+from car import car
 
 
 class SpindlerBattery(Battery):

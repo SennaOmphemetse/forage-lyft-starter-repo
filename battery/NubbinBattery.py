@@ -1,8 +1,10 @@
-from Battery.Battery import Battery
+from battery.Battery import Battery
 from datetime import datetime
+from JustTest import last_service
+from JustTest import Number_years
 from dateutil.relativedelta import relativedelta
 
-from car import Car
+from car import car
 
 
 class NubbinBattery(Battery):
@@ -11,9 +13,9 @@ class NubbinBattery(Battery):
         self.current_date = current_date
 
     def battery_should_be_serviced(self):
-        todays_date = datetime.date.today()
-        given_date = self.last_service_date + relativedelta(years=2)
-        if given_date < todays_date:
+        today_date = datetime.date.today()
+        given_date = last_service(self.last_service_date) + Number_years(2)
+        if given_date < today_date:
             return True
         else:
             return False
